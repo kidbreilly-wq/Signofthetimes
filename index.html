@@ -43,6 +43,19 @@
   footer { font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(245,221,208,0.22); opacity: 0; animation: rise 1s 1s forwards; -webkit-text-stroke: 0.2px currentColor; }
   @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 </style>
+<script>
+  (function() {
+    var correct = 'karaoke2025';
+    var key = 'karaoke_auth';
+    if (sessionStorage.getItem(key) === correct) return;
+    var pwd = prompt('Enter password:');
+    if (pwd === correct) {
+      sessionStorage.setItem(key, correct);
+    } else {
+      document.documentElement.innerHTML = '<div style="background:#0d0404;color:#f5ddd0;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;font-size:1.2rem;letter-spacing:0.1em;">Incorrect password.</div>';
+    }
+  })();
+</script>
 </head>
 <body>
 <div class="bg-image"></div>
@@ -62,7 +75,7 @@
   <div class="video-wrap">
     <div class="video-border">
       <video controls preload="auto">
-        <source src="Sign of the times.mp4" type="video/mp4">
+        <source src="Sign_of_the_times.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
